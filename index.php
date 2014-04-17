@@ -16,3 +16,5 @@ $URL = $REPOSITORYHOSTING_URL.'/commit/'.$REVISION.'?js=1';
 
 $curlCommand = "curl -H \"X-TrackerToken: $TOKEN\" -X POST -H \"Content-type: application/xml\" -d \"<source_commit><message>$MESSAGE</message><author>$AUTHOR</author><commit_id>$REVISION</commit_id><url>$URL</url></source_commit>\" http://www.pivotaltracker.com/services/v4/source_commits";
 
+$ret = null;
+exec($curlCommand, $ret);
